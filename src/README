@@ -63,3 +63,43 @@ MyModal嵌套在Main中,没有标题,
 main 中重新设置了标题,所以有标题
 
 
+
+静态内置主题
+
+let Tabs = createBottomTabNavigator(
+  {
+    /* routes */
+  },
+  {
+    tabBarOptions: {
+      activeTintColor: {
+        light: '#000',
+        dark: '#fff',
+      },
+      inactiveTintColor: {
+        light: 'rgba(0,0,0,0.2)',
+        dark: 'rgba(255,255,255,0.2)',
+      },
+    },
+  }
+);
+
+
+tabNavigationChangeBackgGround底部可以变颜色,但是对于项目因为react react-native 版本低不能改变背景色
+
+
+改变底部导航背景色
+写在 let Navigation = createAppContainer(Tabs);  createAppContainer创建的对象中
+
+
+1 指定  theme="dark"   <Navigation theme="dark" />;
+
+2  写入 theme={theme}        <Navigation theme={theme} />
+
+改变背景色
+themeNavigationOptionChangeBackGround  重点看看
+
+
+
+
+

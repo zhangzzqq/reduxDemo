@@ -84,12 +84,12 @@ const TabNavigator = createBottomTabNavigator({
 
 // export default createAppContainer(TabNavigator);
 let Navigation = createAppContainer(TabNavigator);
-// export default () => <Navigation theme="dark" />;
-export default () => (
-    <AppearanceProvider>
-        <Navigation />
-    </AppearanceProvider>
-);
+export default () => <Navigation theme="dark" />;
+// export default () => (
+//     <AppearanceProvider>
+//         <Navigation />
+//     </AppearanceProvider>
+// );
 
 // export default () => (
 //     <AppearanceProvider>
