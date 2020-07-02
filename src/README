@@ -1,0 +1,65 @@
+
+navigation参数传值
+
+写在navigation.navigate()括号第二个参数中
+{
+              itemId: 86,
+              otherParam: 'anything you want here',
+}
+
+
+
+改变title的值
+在class中写入,otherParam是上个界面传过来的值
+  static navigationOptions = ({ navigation }) => {
+        return {
+            title: navigation.getParam('otherParam', 'A Nested Details Screen'),
+        };
+    };
+
+动态改变title的值
+1
+   static navigationOptions = ({ navigation }) => {
+        return {
+            title: navigation.getParam('otherParam', 'A Nested Details Screen'),
+        };
+    };
+2
+       <Button
+                    title="Update the title"
+                    onPress={() =>
+                        this.props.navigation.setParams({ otherParam: 'Updated!' })}
+                />
+
+
+每个界面共享同一个样式
+样式写在createStackNavigator中,然后放入createAppContainer中
+
+const RootStack = createStackNavigator(
+    {
+        Home: HomeScreen,
+        Details: DetailsScreen,
+    },
+    {
+        initialRouteName: 'Home',
+        /* The header config from HomeScreen is now here */
+        defaultNavigationOptions: {
+            headerStyle: {
+                backgroundColor: '#f4511e',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+                fontWeight: 'bold',
+            },
+        },
+    }
+);
+
+
+bottomNavigationShare 重点看看
+
+嵌套导航
+MyModal嵌套在Main中,没有标题,
+main 中重新设置了标题,所以有标题
+
+
