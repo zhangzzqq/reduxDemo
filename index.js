@@ -13,8 +13,9 @@ import {name as appName} from './app.json';
 // import App from './src/auth/authScreen';
 // import App from './src/theme/defaultThemeComponent';
 // import App from './src/theme/defaultThemeComponent';
-// import App from './src/tab/tabNavigationChangeBgGroundTest';
-import App from './src/theme/themeNavigationOptionChangeBackGround';
+import App from './src/tab/tabNavigationChangeBgGroundTest';
+// import App from './src/theme/themeNavigationOptionChangeBackGround';
+// import App from './src/redux/test';
 
 
 
